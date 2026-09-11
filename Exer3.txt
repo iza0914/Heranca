@@ -1,8 +1,4 @@
-﻿using System;
-
-namespace Heranca
-{
-    public abstract class FormaGeometrica
+public abstract class FormaGeometrica
     {
         public abstract double CalcularArea();
     }
@@ -37,6 +33,44 @@ namespace Heranca
 
             Circulo circulo = new Circulo { Raio = 3 };
             Console.WriteLine($"Área do Círculo: {circulo.CalcularArea():F2}");
+        }
+    }
+
+
+namespace Heranca
+{
+    public abstract class FormaGeometrica
+
+    {
+
+        public abstract double CalcularArea();
+
+    }
+
+}
+
+namespace Heranca
+{
+    public class Retangulo : FormaGeometrica
+    {
+        public double Largura { get; set; }
+        public double Altura { get; set; }
+        public override double CalcularArea()
+
+        {
+            return Largura * Altura;
+        }
+    }
+}
+
+namespace Heranca
+{
+    public class Circulo : FormaGeometrica
+    {
+        public double Raio { get; set; }
+        public override double CalcularArea()
+        {
+            return Math.PI * Raio * Raio;
         }
     }
 }
