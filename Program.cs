@@ -1,42 +1,42 @@
-﻿using System;
-
-namespace Heranca
+﻿namespace Heranca
 {
-    public abstract class FormaGeometrica
+
+    internal class Program
     {
-        public abstract double CalcularArea();
-    }
 
-    public class Retangulo : FormaGeometrica
-    {
-        public double Largura { get; set; }
-        public double Altura { get; set; }
-
-        public override double CalcularArea()
-        {
-            return Largura * Altura;
-        }
-    }
-
-    public class Circulo : FormaGeometrica
-    {
-        public double Raio { get; set; }
-
-        public override double CalcularArea()
-        {
-            return Math.PI * Raio * Raio;
-        }
-    }
-
-    public class Program
-    {
         static void Main(string[] args)
         {
-            Retangulo retangulo = new Retangulo { Largura = 5, Altura = 10 };
-            Console.WriteLine($"Área do Retângulo: {retangulo.CalcularArea()}");
+            public virtual void Atacar(Personagem alvo)
 
-            Circulo circulo = new Circulo { Raio = 3 };
-            Console.WriteLine($"Área do Círculo: {circulo.CalcularArea():F2}");
+        {
+
+            alvo.PontosDeVida -= ForcaDeAtaque;
+
+
+            if (alvo.PontosDeVida < 0)
+
+            {
+
+                alvo.PontosDeVida = 0;
+
+            }
+
+
+            Console.WriteLine($"{Nome} causou {ForcaDeAtaque} de dano em {alvo.Nome}.");
+
+            Console.WriteLine($"{alvo.Nome} ficou com {alvo.PontosDeVida} PV.");
+
         }
+
+
+        public bool EstaVivo()
+        {
+
+            return PontosDeVida > 0;
+
+        }
+
     }
+
+
 }
